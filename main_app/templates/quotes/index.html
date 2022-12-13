@@ -4,10 +4,12 @@
 <h1>Quotes List</h1>
 {% for quote in quotes %}
   <div class="card">
-    <div class="card-content">
-        <span class="card-title">{{ quote.quote }}</span>
-        <p>Reason: {{ quote.author }}</p>
-    </div>
+    <a href="/quotes/{{quote.id}}">
+      <div class="card-content">
+          <span class="card-title">{{ quote.quote }}</span>
+          <p>Author: {{ quote.author }}</p>
+      </div>
+    </a>
   </div>
 {% endfor %}
 

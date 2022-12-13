@@ -12,6 +12,6 @@ def quotes_index(request):
     quotes = Quote.objects.all()
     return render(request, 'quotes/index.html', { "quotes": quotes })
 
-def quotes_detail(request, goal_id):
-  quote = Quote.objects.get(id=goal_id)
+def quotes_detail(request, quote_id):
+  quote = Quote.objects.get(id=quote_id)
   return render(request, 'quotes/detail.html', { 'quote': quote})
