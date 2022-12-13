@@ -8,6 +8,10 @@
     <span class="card-title">{{ quote.quote }}</span>
     <p>Author: {{ quote.author }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'quotes_update' quote.id %}">Edit</a>
+    <a href="{% url 'quotes_delete' quote.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}

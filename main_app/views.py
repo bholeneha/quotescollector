@@ -1,5 +1,18 @@
 from django.shortcuts import render
 from .models import Quote
+from django.views.generic.edit import CreateView, UpdateView, DeleteView 
+
+class QuoteCreate(CreateView):
+    model = Quote
+    fields = '__all__'
+
+class QuoteUpdate(UpdateView):
+    model = Quote
+    fields = '__all__'
+
+class QuoteDelete(DeleteView):
+    model = Quote
+    success_url = '/quotes/'
 
 # Create your views here.
 def home(request):
