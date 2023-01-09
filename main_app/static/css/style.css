@@ -93,3 +93,8 @@ h1 {
     opacity: 75%;
     color: #A8C7A6;
 }
+
+.author {
+    color: var(--text-nav);
+    opacity: 75%;
+}
