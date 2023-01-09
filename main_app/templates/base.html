@@ -10,16 +10,24 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <header class="navbar-fixed">
+  <header class="">
     <nav>
-      <div class="nav-wrapper">
+      <div class="">
         <ul>
           <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Quotes Collector</a></li>
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'index' %}">Quotes</a></li>
+          {% if user.is_authenticated %}
           <li><a href="{% url 'quotes_create' %}">Add Quote</a></li>
-          <li><a href="{% url 'index' %}">View All Quotes</a></li>
+          <li><a href="{% url 'tags_index' %}">View All Tags</a></li>
+            <li><a href="{% url 'tags_create' %}">Add a Tag</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
